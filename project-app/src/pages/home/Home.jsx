@@ -1,8 +1,9 @@
-import axios from 'axios';
-import Button from '../../assets/boton/Button';
-import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import Carrusel from '../../assets/carrusel/Carrusel'
+import React, { useEffect, useState } from 'react'
+import Button from '../../assets/boton/Button'
 import "./Home.css"
-import Carrusel from '../../assets/carrusel/Carrusel';
+import 'bootstrap'
 
 export const HomeScreen = ({name, foto}) => {
 
