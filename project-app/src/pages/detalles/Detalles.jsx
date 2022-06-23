@@ -11,7 +11,7 @@ export const Detalles = () =>{
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get("https://ecomerce-master.herokuapp.com/api/v1/item/'{params.id}'");
+                const { data } = await axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item/${params.id}`);
                 setInfo(data);
             } catch (error) {
             console.log("error API", error);
@@ -25,15 +25,14 @@ export const Detalles = () =>{
         <>
         <div>   
             <div className="container">
-                <img src={params.image} className="card-img-top image" alt='imagenProducto'/>
+                <img src={info.image} className="card-img-top image" alt='imagenProducto'/>
                 <div className="info">
                     <p className="no_space">
-                        Name: {params.product_name} <br />
-                        Stock: {params.isActive} <br />
-                        Category: {params.category} <br />
-                        Brand: {params.brand} <br />
-                        Description: {params.description} <br />
-                        Price: {params.price} <br />
+                        Name: {info.product_name} <br />
+                        Category: {info.category} <br />
+                        Brand: {info.brand} <br />
+                        Description: {info.description} <br />
+                        Price: ${info.price} <br />
                     </p> 
                 </div>
             </div>   
