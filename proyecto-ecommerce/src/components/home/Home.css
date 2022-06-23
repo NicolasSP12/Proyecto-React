@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 2.5rem;
+  
+}
+
+
+.borde {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border-radius: 25px;
+  
+}
+
+.imagen img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.vistas {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-control-2 {
+  display: block; 
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn {
+  
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
