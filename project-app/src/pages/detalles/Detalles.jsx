@@ -7,34 +7,36 @@ import './detalles.css'
 export const Detalles = () =>{
     const [info, setInfo] = useState([])
     const params = useParams()
-    console.log(params)
+    console.log(params.id)
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get("https://ecomerce-master.herokuapp.com/api/v1/item/${params.id}");
+                const { data } = await axios.get("https://ecomerce-master.herokuapp.com/api/v1/item/'{params.id}'");
                 setInfo(data);
             } catch (error) {
             console.log("error API", error);
             }
         })();
     }, []);
+    
+    
       
     return (
         <>
-        <div className='App App-header' class="container">   
-                <div>
-                    <img  src={info.image} className="card-img-top" alt='imagenProducto'/>
-                    <div class="info">
-                        <p>
-                            Name: {info.product_name}
-                            Stock: {info.isActive}
-                            Category: {info.category}
-                            Brand: {info.brand}
-                            Description: {info.description}
-                            Price: {info.price}
-                        </p> 
-                    </div>
-                </div>   
+        <div>   
+            <div className="container">
+                <img src={params.image} className="card-img-top image" alt='imagenProducto'/>
+                <div className="info">
+                    <p className="no_space">
+                        Name: {params.product_name} <br />
+                        Stock: {params.isActive} <br />
+                        Category: {params.category} <br />
+                        Brand: {params.brand} <br />
+                        Description: {params.description} <br />
+                        Price: {params.price} <br />
+                    </p> 
+                </div>
+            </div>   
         </div>
         </>
     )
