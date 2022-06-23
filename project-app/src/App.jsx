@@ -1,22 +1,17 @@
-import {Routes, Route, BrowserRouter as Router} from 'react-router-dom';
-import { detalles as Detalles} from './pages/detalles'
-import logo from './assets/logo.svg';
+import { Routes, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Detalles }  from './pages/detalles/Detalles'
+import { HomeScreen } from "./pages/home/Home"
 import './App.css';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //   </header>
-    // </div>
     <Router>
       <Routes>
-        <Route>
-          1
-        </Route>
+        <Route index 
+        path="/" 
+        element={<HomeScreen foto={(id) => console.log("id desde comp hijo", id)} name="Holis"/>}></Route>
         <Route
-        path='InfoDetallada'
+        path='detalles'
         element={ <Detalles/> } />
       </Routes>
     </Router>

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import Button from '../boton/Button';
-import { useEffect, useState } from 'react';
-import "./App.css"
-import Carrusel from '../carrusel/Carrusel';
+import Button from '../../assets/boton/Button';
+import React, { useEffect, useState } from 'react';
+import "./Home.css"
+import Carrusel from '../../assets/carrusel/Carrusel';
 
 export const HomeScreen = ({name, foto}) => {
 
@@ -14,7 +14,7 @@ export const HomeScreen = ({name, foto}) => {
         const { data } = await axios.get(
           "https://ecomerce-master.herokuapp.com/api/v1/item"
         );
-        setInfo(data);
+        setInfo(data.slice(0,20));
       } catch (error) {
         console.log("error API", error);
       }
@@ -26,21 +26,17 @@ export const HomeScreen = ({name, foto}) => {
     <Carrusel/>
     <div className='App App-header row row-cols-1 row-cols-md-4 g-4'>
       {info.map((n)=>(   
-        <div className='col'>
+        <div className='col' key={n._id}>
           <div className='borde'>
             <img  src={n.image} className="card-img-top" alt='imagenesProductos'/>
-            <p  key={n._id} onClick={() => name(n._id, 40)}>
+            <p onClick={() => name(n._id, 40)}>
             {n.product_name}
             </p> 
-            <Button/>
+            <Button id={n._id}/>
           </div>
-        
         </div>  
       ))} 
     </div>
-    </>
-    
-  )
-
-    
+    </> 
+  )    
 }
