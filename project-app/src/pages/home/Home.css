@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.borde {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border-radius: 25px;
+  
+}
+
+.imagen img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+
+
