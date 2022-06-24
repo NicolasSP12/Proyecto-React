@@ -25,15 +25,21 @@ export const Detalles = () =>{
         <>
         <div>   
             <div className="container">
-                <img src={info.image} className="card-img-top image" alt='imagenProducto'/>
+                <img src={info.image} className="card-img-top" alt='imagenProducto'/>
                 <div className="info">
                     <p className="no_space">
-                        Name: {info.product_name} <br />
-                        Category: {info.category} <br />
-                        Brand: {info.brand} <br />
-                        Description: {info.description} <br />
-                        Price: ${info.price} <br />
-                    </p> 
+                        <span>Price:</span> ${info.price} 
+                        <br /> <br />
+                        <span>Name:</span> {info.product_name} 
+                        <br /> <br />
+                        <span>Brand:</span> {info.brand} 
+                        <br /> <br />
+                        <span>Category:</span> {info.category} 
+                        <br /> <br />
+                        <span>Description:</span> {info.description} 
+                        <br /> <br />
+                    </p>
+                    <button className='buy'>Buy</button> 
                 </div>
             </div>   
         </div>
