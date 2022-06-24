@@ -57,7 +57,7 @@ export default function Form() {
           <div className='App App-header row row-cols-1 row-cols-md-5 g-4'>{
 
             producto.length === 0 
-            ? <h2>menus </h2>
+            ? <h2></h2>
             : producto.map(product => {
               return(
                 
